@@ -339,10 +339,12 @@ export default {
      */
     process (value) {
       console.log(value)
+      console.log(isNaN(value))
       if (value >= this.max) this.update(this.max)
       if (value <= this.min) this.update(this.min)
       if (value > this.min && value < this.max) this.update(value)
       if (value == null) this.update(value)
+      if (isNaN(value)) this.update(value)
       if (!this.minus && value < 0) this.min >= 0 ? this.update(this.min) : this.update(0)
     },
 
