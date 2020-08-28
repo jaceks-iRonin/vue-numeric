@@ -386,6 +386,7 @@ export default {
      * @return {Number}
      */
     unformat (value) {
+      if (value == null) { return null; }
       value = parseFloat(value.replace ? value.replace(",",".") : value)
       const toUnformat = typeof value === 'string' && value === '' ? this.emptyValue : value
       if (toUnformat === null) { return null; }
