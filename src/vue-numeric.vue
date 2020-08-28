@@ -338,6 +338,7 @@ export default {
      * @param {Number} value
      */
     process (value) {
+      console.log(value)
       if (value >= this.max) this.update(this.max)
       if (value <= this.min) this.update(this.min)
       if (value > this.min && value < this.max) this.update(value)
