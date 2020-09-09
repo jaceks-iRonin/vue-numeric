@@ -272,9 +272,7 @@ export default {
 
   mounted () {
     // Set default value props when valueNumber has some value 
-    console.log(this.valueNumber)
     if (this.valueNumber == 0) {
-      console.log('test ' + this.valueNumber)
       this.process(0)
       this.amount = this.format(0)
     } else if (this.valueNumber) {
