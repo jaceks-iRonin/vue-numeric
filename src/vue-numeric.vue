@@ -273,6 +273,7 @@ export default {
   mounted () {
     // Set default value props when valueNumber has some value 
     if (this.valueNumber) {
+      console.log(this.valueNumber)
       this.process(this.valueNumber)
       this.amount = this.format(this.valueNumber)
 
@@ -342,6 +343,7 @@ export default {
       if (value <= this.min) this.update(this.min)
       if (value > this.min && value < this.max) this.update(value)
       if (value == null) this.update(value)
+      if (value == 0) this.update(0)
       if (isNaN(value)) this.update(null)
       if (!this.minus && value < 0) this.min >= 0 ? this.update(this.min) : this.update(0)
     },
