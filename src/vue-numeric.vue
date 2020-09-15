@@ -389,7 +389,7 @@ export default {
      */
     unformat (value) {
       if (value == null) { return null; }
-      value = parseFloat(value.replace ? value.replace(",",".") : value)
+      value = parseFloat(value.replace ? value.replaceAll(" ","").replace(",",".") : value)
       const toUnformat = typeof value === 'string' && value === '' ? this.emptyValue : value
       if (toUnformat === null) { return null; }
       return accounting.unformat(toUnformat, this.decimalSeparatorSymbol)
