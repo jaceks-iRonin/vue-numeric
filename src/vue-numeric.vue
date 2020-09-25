@@ -332,7 +332,8 @@ export default {
     /**
      * Handle input event.
      */
-    onInputHandler () {
+    onInputHandler (e) {
+      this.$emit('input', e)
       this.process(this.amountNumber)
     },
 
